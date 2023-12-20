@@ -1,0 +1,34 @@
+$colors: (
+  'white': #fff,
+  'black': #000,
+  
+  'button-border': #231f20,
+  'button-primary': #1db0bd,
+  'button-secondary': #3fd4e1,
+  'button-hover': #ffcd00,
+  
+  'primary-1': #6ab3b9,
+  'primary-2': #2d889d,
+  'primary-3': #b33c2e,
+  'primary-4': #e8663c,
+  
+  'section-subtitle': #1db0bd,
+  'about': #f7c72e,
+  'highlight': #dcad0d,
+);
+
+@function hex-to-rgb ($hex) {
+  @return red($hex), green($hex), blue($hex);
+}
+  
+:root {
+  @each $key, $value in $colors {
+    --color-#{$key}: #{$value};
+    --color-#{$key}--rgb: #{hex-to-rgb($value)};
+  }
+}
+
+html {
+  background-color: var(--color-black);
+  color: var(--color-white);
+}

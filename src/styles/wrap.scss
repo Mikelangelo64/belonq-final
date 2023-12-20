@@ -1,0 +1,38 @@
+@import './base';
+
+:root {
+  // @include viewport-tablet {
+  //   --wrap: calc(5 * var(--vw, 1vw));
+  // }
+  // @include viewport-phone {
+  //   --wrap: calc(5 * var(--vw, 1vw));
+  // }
+  
+  // @include viewport-desktop {
+  //   --wrap: calc(5.75 * var(--vw, 1vw));
+
+  //   @media (min-width: 1300px) {
+  //     --wrap: calc((var(--vw, 1vw) * 100 - 1200px) / 2);
+  //   }
+  // }
+  @include viewport-tablet {
+    --wrap: 5vw;
+  }
+  @include viewport-phone {
+    --wrap: 5vw;
+    --wrap-info: 20.833vw;
+    
+    @media (max-width: 660px) {
+      --wrap-info: 19.142vw;
+    }
+  }
+  
+  --wrap: 5.75vw;
+  --wrap-info: #{px-to-rem(32)};
+
+  @include viewport-desktop {
+    @media (min-width: 1600px) {
+      --wrap: calc((100vw - 1434px) / 2);
+    }
+  }
+}

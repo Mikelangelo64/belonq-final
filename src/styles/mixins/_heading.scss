@@ -1,0 +1,86 @@
+@mixin text-heading-styles {
+  margin: 0;
+  font-family: $font-family-heading;
+  font-weight: 700;
+  line-height: 106%;
+  text-transform: uppercase;
+}
+
+@mixin text-heading-1 {
+  @include text-heading-styles;
+
+  @include viewport-desktop {
+    font-size: px-to-rem(156);
+    
+    @media (max-width: 1600px) {
+      font-size: px-to-rem(132);
+    }
+
+    @media (max-width: 1300px) {
+      font-size: px-to-rem(100);
+    }
+  }
+  @include viewport-tablet {
+    font-size: px-to-rem(80);
+  }
+  @include viewport-phone {
+    font-size: px-to-rem(110);
+    
+    @media (max-width: 650px) {
+      font-size: px-to-rem(52);
+    }
+    @media (max-width: 340px) {
+      font-size: px-to-rem(48);
+    }
+  }
+}
+
+@mixin text-heading-2 {
+  @include text-heading-styles;
+
+  @include viewport-desktop {
+    font-size: px-to-rem(48);
+  }
+  @include viewport-tablet {
+    font-size: px-to-rem(42);
+  }
+  @include viewport-phone {
+    font-size: px-to-rem(36);
+  }
+}
+
+@mixin text-heading-3 {
+  @include text-heading-styles;
+
+  @include viewport-desktop {
+    font-size: px-to-rem(28);
+  }
+  @include viewport-tablet {
+    font-size: px-to-rem(26);
+  }
+  @include viewport-phone {
+    font-size: px-to-rem(24);
+  }
+}
+
+@mixin text-heading-4 {
+  @include text-heading-styles;
+
+  @include viewport-desktop {
+    font-size: px-to-rem(20);
+  }
+  @include viewport-tablet {
+    font-size: px-to-rem(20);
+  }
+  @include viewport-phone {
+    font-size: px-to-rem(18);
+  }
+}
+
+@mixin text-heading-5 {
+  @include text-heading-4;
+}
+
+@mixin text-heading-6 {
+  @include text-heading-5;
+}

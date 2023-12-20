@@ -1,0 +1,18 @@
+@import '../base';
+
+.header {
+  padding: px-to-rem(20) 0;
+  //background-color: var(--color-black);
+  
+  @include viewport-tablet-min {
+    @media (max-height: 1046px) {
+      padding: px-to-rem(20) 0 0;      
+    }
+  }
+
+  //.header__container 
+  &__container {
+    position: relative;
+    z-index: 1;
+  }
+}

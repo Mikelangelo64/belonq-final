@@ -1,0 +1,103 @@
+@import '../base';
+
+.footer {
+  padding: px-to-rem(16) 0;
+  //background-color: var(--color-black);
+  //background-color: var(--color-current-theme);
+
+  @include viewport-tablet-min {
+    @media (max-height: 1016px) {
+      padding: px-to-rem(6) 0 px-to-rem(6);
+    }
+  }
+
+  //.footer__container 
+  &__container {
+    position: relative;
+    z-index: 1;
+  }
+  
+  //.footer__wrapper
+  &__wrapper {
+    display: flex;
+    width: 100%;
+    align-items: center;
+
+    @include viewport-tablet-min {
+      justify-content: space-between;
+    }
+    @include viewport-phone {
+      justify-content: space-between;
+
+      @media (max-width: 660px) {
+        flex-direction: column;
+      }
+    }
+
+    > * + * {
+      @include viewport-tablet-min {
+        margin-left: px-to-rem(20);
+      }
+      @include viewport-phone {
+        margin-left: px-to-rem(20);
+        //margin-top: px-to-rem(20);
+        
+        @media (max-width: 660px) {
+          margin-left: unset;
+        }
+      }
+    }
+  }
+  
+  //.footer-contacts 
+  &-contacts {
+    display: inline-flex;
+
+    @include viewport-phone { 
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    > * + * {
+      margin-left: px-to-rem(12);
+    }
+
+    &.socials {
+      > * + * {
+        @include viewport-tablet-min {
+          margin-left: px-to-rem(34);
+        }
+      }
+    }
+    
+    //.footer-contacts__item 
+    &__item {
+      display: inline-flex;
+      margin: px-to-rem(-6);
+      padding: px-to-rem(6);
+
+      @include transition(color 0.4s);
+      text-decoration: unset;
+      font-weight: 400;
+      font-size: px-to-rem(16);
+      line-height: 124%;
+      font-family: $font-family-footer;
+
+      color: var(--color-white);
+
+      @include hover-focus-visible {
+        @include non-mobile-device {
+          color: var(--color-highlight);
+        }
+      }
+
+      @include viewport-phone { 
+        margin-top: px-to-rem(6);
+
+        @media (max-width: 660px) {
+          font-size: px-to-rem(14);
+        }
+      }
+    }
+  }
+}
