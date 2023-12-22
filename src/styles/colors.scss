@@ -7,14 +7,18 @@ $colors: (
   'button-secondary': #3fd4e1,
   'button-hover': #ffcd00,
   
-  'primary-1': #6ab3b9,
-  'primary-2': #2d889d,
-  'primary-3': #b33c2e,
-  'primary-4': #e8663c,
+  'primary-1': #A6F805,
+  'primary-2': #A6F805,
+  'primary-3': #A6F805,
+  'primary-4': #A6F805,
+  // 'primary-1': #6ab3b9,
+  // 'primary-2': #2d889d,
+  // 'primary-3': #b33c2e,
+  // 'primary-4': #e8663c,
   
-  'section-subtitle': #1db0bd,
-  'about': #f7c72e,
-  'highlight': #dcad0d,
+  'section-subtitle': #A6F805,
+  'about': #A6F805,
+  'highlight': #A6F805,
 );
 
 @function hex-to-rgb ($hex) {

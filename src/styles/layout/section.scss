@@ -129,6 +129,7 @@
       z-index: 1;
       text-shadow: 0 7px 5px rgba(var(--color-black--rgb), 0.7);
 
+      color: var(--color-highlight);
 
       &.v-split-text {
         .v-split-text__line {
@@ -158,6 +159,49 @@
         .v-split-text__letter {
           display: inline-block;
         }
+
+        .heading-svg {
+          display: inline-flex;
+          align-items: center;
+
+          opacity: 0;
+          @include transition(opacity 0.6s);
+          transform: translate(8px, 22px);
+
+          @at-root .section-main__title.visible .heading-svg {
+            opacity: 1;
+          }
+
+          @include viewport-desktop {
+            max-width: px-to-rem(156);
+            
+            @media (max-width: 1600px) {
+              max-width: px-to-rem(132);
+            }
+        
+            @media (max-width: 1300px) {
+              max-width: px-to-rem(100);
+            }
+          }
+          @include viewport-tablet {
+            max-width: px-to-rem(80);
+          }
+          @include viewport-phone {
+            max-width: px-to-rem(110);
+            
+            @media (max-width: 650px) {
+              max-width: px-to-rem(52);
+            }
+            @media (max-width: 340px) {
+              max-width: px-to-rem(48);
+            }
+          }
+
+          svg {
+            width: 100%;
+            height: auto;
+          }
+        }
       }
 
       &.visible {
@@ -173,11 +217,11 @@
               /* stylelint-disable-next-line */
               $random: random(20);
               $deg: #{15deg};
-              $color: var(--color-highlight);
+              $color: var(--color-white);
 
               @if $random > 10 {
                 $deg: #{-15deg};
-                $color: var(--color-section-subtitle);
+                $color: var(--color-white);
               }
 
               @include non-mobile-hover {
@@ -406,7 +450,7 @@
 
       span {
         color: var(--color-highlight);
-        background: linear-gradient(0.25turn,#dcad0d 0%, #1db0bd 70%, #dcad0d 100%);
+        background: linear-gradient(0.25turn,#A6F805 0%, #fff 70%, #A6F805 100%);
         /* stylelint-disable-next-line */
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -477,7 +521,7 @@
     
     //.section-info__description 
     &__description {
-      //margin-top: px-to-rem(14);
+      margin-top: px-to-rem(14);
       line-height: 112%;
       
       @include viewport-tablet-min {
