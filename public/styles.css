@@ -2000,7 +2000,6 @@ html:not(.v-mobile) .footer-contacts__item:focus-visible {
   transition: opacity 0.6s;
   transition-delay: 0s;
   transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
-  transform: translate(8px, 22px);
 }
 .section-main__title.visible .heading-svg {
   opacity: 1;
@@ -2009,6 +2008,7 @@ html:not(.v-mobile) .footer-contacts__item:focus-visible {
 @media (min-width: 1200px) {
   .section-main__title.v-split-text .heading-svg {
     max-width: 9.75rem;
+    transform: translate(8px, 22px);
   }
 }
 @media (min-width: 1200px) and (max-width: 1600px) {
@@ -2024,16 +2024,19 @@ html:not(.v-mobile) .footer-contacts__item:focus-visible {
 @media (min-width: 900px) and (max-width: 1199px) {
   .section-main__title.v-split-text .heading-svg {
     max-width: 5rem;
+    transform: translate(8px, 22px);
   }
 }
 @media (max-width: 899px) {
   .section-main__title.v-split-text .heading-svg {
     max-width: 6.875rem;
+    transform: translate(8px, 22px);
   }
 }
 @media (max-width: 899px) and (max-width: 650px) {
   .section-main__title.v-split-text .heading-svg {
     max-width: 3.25rem;
+    transform: translate(8px, 12px);
   }
 }
 @media (max-width: 899px) and (max-width: 340px) {
@@ -2044,6 +2047,9 @@ html:not(.v-mobile) .footer-contacts__item:focus-visible {
 .section-main__title.v-split-text .heading-svg svg {
   width: 100%;
   height: auto;
+  transition: transform 0.45s, color 0.8s;
+  transition-delay: 0s;
+  transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 .section-main__title.visible .v-split-text__letter {
   transition: transform 0.45s, color 0.8s;
@@ -2074,7 +2080,7 @@ html:not(.v-mobile) .section-main__title.visible .v-split-text__letter:nth-child
   /* stylelint-disable-next-line */
 }
 html:not(.v-mobile) .section-main__title.visible .v-split-text__letter:nth-child(3):hover {
-  transform: translate(0, -0.625rem) rotate(15deg) scale(1.1);
+  transform: translate(0, -0.625rem) rotate(-15deg) scale(1.1);
   color: var(--color-white);
 }
 
@@ -2082,7 +2088,7 @@ html:not(.v-mobile) .section-main__title.visible .v-split-text__letter:nth-child
   /* stylelint-disable-next-line */
 }
 html:not(.v-mobile) .section-main__title.visible .v-split-text__letter:nth-child(4):hover {
-  transform: translate(0, -0.625rem) rotate(-15deg) scale(1.1);
+  transform: translate(0, -0.625rem) rotate(15deg) scale(1.1);
   color: var(--color-white);
 }
 
@@ -2098,7 +2104,7 @@ html:not(.v-mobile) .section-main__title.visible .v-split-text__letter:nth-child
   /* stylelint-disable-next-line */
 }
 html:not(.v-mobile) .section-main__title.visible .v-split-text__letter:nth-child(6):hover {
-  transform: translate(0, -0.625rem) rotate(-15deg) scale(1.1);
+  transform: translate(0, -0.625rem) rotate(15deg) scale(1.1);
   color: var(--color-white);
 }
 
@@ -2114,7 +2120,7 @@ html:not(.v-mobile) .section-main__title.visible .v-split-text__letter:nth-child
   /* stylelint-disable-next-line */
 }
 html:not(.v-mobile) .section-main__title.visible .v-split-text__letter:nth-child(8):hover {
-  transform: translate(0, -0.625rem) rotate(15deg) scale(1.1);
+  transform: translate(0, -0.625rem) rotate(-15deg) scale(1.1);
   color: var(--color-white);
 }
 
@@ -2130,7 +2136,7 @@ html:not(.v-mobile) .section-main__title.visible .v-split-text__letter:nth-child
   /* stylelint-disable-next-line */
 }
 html:not(.v-mobile) .section-main__title.visible .v-split-text__letter:nth-child(10):hover {
-  transform: translate(0, -0.625rem) rotate(15deg) scale(1.1);
+  transform: translate(0, -0.625rem) rotate(-15deg) scale(1.1);
   color: var(--color-white);
 }
 
@@ -2146,7 +2152,7 @@ html:not(.v-mobile) .section-main__title.visible .v-split-text__letter:nth-child
   /* stylelint-disable-next-line */
 }
 html:not(.v-mobile) .section-main__title.visible .v-split-text__letter:nth-child(12):hover {
-  transform: translate(0, -0.625rem) rotate(15deg) scale(1.1);
+  transform: translate(0, -0.625rem) rotate(-15deg) scale(1.1);
   color: var(--color-white);
 }
 
@@ -2154,7 +2160,7 @@ html:not(.v-mobile) .section-main__title.visible .v-split-text__letter:nth-child
   /* stylelint-disable-next-line */
 }
 html:not(.v-mobile) .section-main__title.visible .v-split-text__letter:nth-child(13):hover {
-  transform: translate(0, -0.625rem) rotate(-15deg) scale(1.1);
+  transform: translate(0, -0.625rem) rotate(15deg) scale(1.1);
   color: var(--color-white);
 }
 
@@ -2162,7 +2168,7 @@ html:not(.v-mobile) .section-main__title.visible .v-split-text__letter:nth-child
   /* stylelint-disable-next-line */
 }
 html:not(.v-mobile) .section-main__title.visible .v-split-text__letter:nth-child(14):hover {
-  transform: translate(0, -0.625rem) rotate(15deg) scale(1.1);
+  transform: translate(0, -0.625rem) rotate(-15deg) scale(1.1);
   color: var(--color-white);
 }
 
@@ -2170,7 +2176,12 @@ html:not(.v-mobile) .section-main__title.visible .v-split-text__letter:nth-child
   /* stylelint-disable-next-line */
 }
 html:not(.v-mobile) .section-main__title.visible .v-split-text__letter:nth-child(15):hover {
-  transform: translate(0, -0.625rem) rotate(15deg) scale(1.1);
+  transform: translate(0, -0.625rem) rotate(-15deg) scale(1.1);
+  color: var(--color-white);
+}
+
+html:not(.v-mobile) .section-main__title.visible .heading-svg svg:hover {
+  transform: translate(0, -0.625rem) rotate(-15deg) scale(1.1);
   color: var(--color-white);
 }
 
@@ -2993,7 +3004,7 @@ html:not(.v-mobile) .dowload:focus-visible .dowload__title span::before {
 }
 @media (max-width: 899px) and (max-width: 660px) {
   .background__layers img.background-header {
-    height: 5rem;
+    height: 7rem;
   }
 }
 @media (max-width: 899px) {
