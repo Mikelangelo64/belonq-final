@@ -27,13 +27,7 @@ const initHeadingTimeline = () => {
       easing: [0.68, -0.6, 0.32, 1.6],
     });
 
-    tm.addCallback('progress', ({ easing }) => {
-      letter.style.transform = `translate(0, ${(1 - easing) * 100}%)`;
-      letter.style.opacity = `${easing}`;
-    });
-    timeline.addNestedTimeline(tm);
-
-    if (index === 4) {
+    if (index === 5) {
       const svgContainer = document.createElement('span');
       svgContainer.classList.add('heading-svg');
 
@@ -94,13 +88,26 @@ const initHeadingTimeline = () => {
         </svg>
       `;
 
+      const spanLetter = document.createElement('span');
+      spanLetter.classList.add('heading-letter');
+      spanLetter.innerHTML = letter.innerHTML;
+
       console.log(letter);
       // splitTextContainer.appendChild(svgContainer);
-      letter.after(svgContainer);
+      // letter.after(svgContainer);
+      letter.innerHTML = '';
+      // letter.appendChild(spanLetter);
+      letter.appendChild(svgContainer);
     }
+
+    tm.addCallback('progress', ({ easing }) => {
+      letter.style.transform = `translate(0, ${(1 - easing) * 100}%)`;
+      letter.style.opacity = `${easing}`;
+    });
+    timeline.addNestedTimeline(tm);
   });
 
-  splitTextContainer.setAttribute('aria-label', 'crypto community');
+  // splitTextContainer.setAttribute('aria-label', 'crypto community');
 
   timeline.addCallback('end', () => {
     splitTextContainer.classList.add('visible');

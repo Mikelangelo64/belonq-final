@@ -1520,6 +1520,15 @@ section {
   align-items: center;
   justify-content: center;
 }
+.v-preloader .preloader__logo {
+  position: relative;
+  z-index: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transform: translateZ(0);
+}
 @media (min-width: 900px) {
   .v-preloader .preloader__logo {
     max-width: 37.5rem;
@@ -1534,6 +1543,44 @@ section {
   .v-preloader .preloader__logo {
     max-width: 16.25rem;
   }
+}
+.v-preloader .preloader__logo::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 0;
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
+  transform: translate(-50%, -50%);
+  background-color: var(--color-white);
+}
+.v-preloader .preloader__logo::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
+  transform-origin: 0 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--color-highlight);
+  animation-name: image-fill;
+  animation-duration: 1.6s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+  animation-direction: alternate;
+  animation-play-state: running;
+}
+.v-preloader .preloader__logo img {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: auto;
 }
 .v-preloader .loading-text {
   display: flex;
@@ -1588,6 +1635,14 @@ section {
 .v-preloader .loading-text span:nth-child(7) {
   filter: blur(0);
   animation: blur-text 1.5s calc(6s / 5) infinite linear alternate;
+}
+@keyframes image-fill {
+  0% {
+    transform: scale(1, 0) translate(-50%, -50%);
+  }
+  100% {
+    transform: scale(1) translate(-50%, -50%);
+  }
 }
 @keyframes blur-text {
   0% {
@@ -1996,15 +2051,7 @@ html:not(.v-mobile) .footer-contacts__item:focus-visible {
 .section-main__title.v-split-text .heading-svg {
   display: inline-flex;
   align-items: center;
-  opacity: 0;
-  transition: opacity 0.6s;
-  transition-delay: 0s;
-  transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
 }
-.section-main__title.visible .heading-svg {
-  opacity: 1;
-}
-
 @media (min-width: 1200px) {
   .section-main__title.v-split-text .heading-svg {
     max-width: 9.75rem;
@@ -2047,9 +2094,6 @@ html:not(.v-mobile) .footer-contacts__item:focus-visible {
 .section-main__title.v-split-text .heading-svg svg {
   width: 100%;
   height: auto;
-  transition: transform 0.45s, color 0.8s;
-  transition-delay: 0s;
-  transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 .section-main__title.visible .v-split-text__letter {
   transition: transform 0.45s, color 0.8s;
@@ -2064,8 +2108,8 @@ html:not(.v-mobile) .section-main__title.visible .v-split-text__letter:hover {
   /* stylelint-disable-next-line */
 }
 html:not(.v-mobile) .section-main__title.visible .v-split-text__letter:nth-child(1):hover {
-  transform: translate(0, -0.625rem) rotate(-15deg) scale(1.1);
-  color: var(--color-white);
+  transform: translate(0, -0.625rem) rotate(15deg) scale(1.1);
+  color: var(--color-button-hover);
 }
 
 .section-main__title.visible .v-split-text__letter:nth-child(2) {
@@ -2073,23 +2117,23 @@ html:not(.v-mobile) .section-main__title.visible .v-split-text__letter:nth-child
 }
 html:not(.v-mobile) .section-main__title.visible .v-split-text__letter:nth-child(2):hover {
   transform: translate(0, -0.625rem) rotate(15deg) scale(1.1);
-  color: var(--color-white);
+  color: var(--color-button-hover);
 }
 
 .section-main__title.visible .v-split-text__letter:nth-child(3) {
   /* stylelint-disable-next-line */
 }
 html:not(.v-mobile) .section-main__title.visible .v-split-text__letter:nth-child(3):hover {
-  transform: translate(0, -0.625rem) rotate(-15deg) scale(1.1);
-  color: var(--color-white);
+  transform: translate(0, -0.625rem) rotate(15deg) scale(1.1);
+  color: var(--color-button-hover);
 }
 
 .section-main__title.visible .v-split-text__letter:nth-child(4) {
   /* stylelint-disable-next-line */
 }
 html:not(.v-mobile) .section-main__title.visible .v-split-text__letter:nth-child(4):hover {
-  transform: translate(0, -0.625rem) rotate(15deg) scale(1.1);
-  color: var(--color-white);
+  transform: translate(0, -0.625rem) rotate(-15deg) scale(1.1);
+  color: var(--color-button-primary);
 }
 
 .section-main__title.visible .v-split-text__letter:nth-child(5) {
@@ -2097,7 +2141,7 @@ html:not(.v-mobile) .section-main__title.visible .v-split-text__letter:nth-child
 }
 html:not(.v-mobile) .section-main__title.visible .v-split-text__letter:nth-child(5):hover {
   transform: translate(0, -0.625rem) rotate(-15deg) scale(1.1);
-  color: var(--color-white);
+  color: var(--color-button-primary);
 }
 
 .section-main__title.visible .v-split-text__letter:nth-child(6) {
@@ -2105,7 +2149,7 @@ html:not(.v-mobile) .section-main__title.visible .v-split-text__letter:nth-child
 }
 html:not(.v-mobile) .section-main__title.visible .v-split-text__letter:nth-child(6):hover {
   transform: translate(0, -0.625rem) rotate(15deg) scale(1.1);
-  color: var(--color-white);
+  color: var(--color-button-hover);
 }
 
 .section-main__title.visible .v-split-text__letter:nth-child(7) {
@@ -2113,7 +2157,7 @@ html:not(.v-mobile) .section-main__title.visible .v-split-text__letter:nth-child
 }
 html:not(.v-mobile) .section-main__title.visible .v-split-text__letter:nth-child(7):hover {
   transform: translate(0, -0.625rem) rotate(-15deg) scale(1.1);
-  color: var(--color-white);
+  color: var(--color-button-primary);
 }
 
 .section-main__title.visible .v-split-text__letter:nth-child(8) {
@@ -2121,15 +2165,15 @@ html:not(.v-mobile) .section-main__title.visible .v-split-text__letter:nth-child
 }
 html:not(.v-mobile) .section-main__title.visible .v-split-text__letter:nth-child(8):hover {
   transform: translate(0, -0.625rem) rotate(-15deg) scale(1.1);
-  color: var(--color-white);
+  color: var(--color-button-primary);
 }
 
 .section-main__title.visible .v-split-text__letter:nth-child(9) {
   /* stylelint-disable-next-line */
 }
 html:not(.v-mobile) .section-main__title.visible .v-split-text__letter:nth-child(9):hover {
-  transform: translate(0, -0.625rem) rotate(-15deg) scale(1.1);
-  color: var(--color-white);
+  transform: translate(0, -0.625rem) rotate(15deg) scale(1.1);
+  color: var(--color-button-hover);
 }
 
 .section-main__title.visible .v-split-text__letter:nth-child(10) {
@@ -2137,23 +2181,23 @@ html:not(.v-mobile) .section-main__title.visible .v-split-text__letter:nth-child
 }
 html:not(.v-mobile) .section-main__title.visible .v-split-text__letter:nth-child(10):hover {
   transform: translate(0, -0.625rem) rotate(-15deg) scale(1.1);
-  color: var(--color-white);
+  color: var(--color-button-primary);
 }
 
 .section-main__title.visible .v-split-text__letter:nth-child(11) {
   /* stylelint-disable-next-line */
 }
 html:not(.v-mobile) .section-main__title.visible .v-split-text__letter:nth-child(11):hover {
-  transform: translate(0, -0.625rem) rotate(-15deg) scale(1.1);
-  color: var(--color-white);
+  transform: translate(0, -0.625rem) rotate(15deg) scale(1.1);
+  color: var(--color-button-hover);
 }
 
 .section-main__title.visible .v-split-text__letter:nth-child(12) {
   /* stylelint-disable-next-line */
 }
 html:not(.v-mobile) .section-main__title.visible .v-split-text__letter:nth-child(12):hover {
-  transform: translate(0, -0.625rem) rotate(-15deg) scale(1.1);
-  color: var(--color-white);
+  transform: translate(0, -0.625rem) rotate(15deg) scale(1.1);
+  color: var(--color-button-hover);
 }
 
 .section-main__title.visible .v-split-text__letter:nth-child(13) {
@@ -2161,28 +2205,23 @@ html:not(.v-mobile) .section-main__title.visible .v-split-text__letter:nth-child
 }
 html:not(.v-mobile) .section-main__title.visible .v-split-text__letter:nth-child(13):hover {
   transform: translate(0, -0.625rem) rotate(15deg) scale(1.1);
-  color: var(--color-white);
+  color: var(--color-button-hover);
 }
 
 .section-main__title.visible .v-split-text__letter:nth-child(14) {
   /* stylelint-disable-next-line */
 }
 html:not(.v-mobile) .section-main__title.visible .v-split-text__letter:nth-child(14):hover {
-  transform: translate(0, -0.625rem) rotate(-15deg) scale(1.1);
-  color: var(--color-white);
+  transform: translate(0, -0.625rem) rotate(15deg) scale(1.1);
+  color: var(--color-button-hover);
 }
 
 .section-main__title.visible .v-split-text__letter:nth-child(15) {
   /* stylelint-disable-next-line */
 }
 html:not(.v-mobile) .section-main__title.visible .v-split-text__letter:nth-child(15):hover {
-  transform: translate(0, -0.625rem) rotate(-15deg) scale(1.1);
-  color: var(--color-white);
-}
-
-html:not(.v-mobile) .section-main__title.visible .heading-svg svg:hover {
-  transform: translate(0, -0.625rem) rotate(-15deg) scale(1.1);
-  color: var(--color-white);
+  transform: translate(0, -0.625rem) rotate(15deg) scale(1.1);
+  color: var(--color-button-hover);
 }
 
 .section-main__content {
@@ -2417,6 +2456,7 @@ html:not(.v-mobile) .section-main__title.visible .heading-svg svg:hover {
   width: calc(100% + 2 * var(--wrap-info));
   margin-left: calc(-1 * var(--wrap-info));
   margin-top: 1.25rem;
+  color: var(--color-black);
   background-color: var(--color-section-subtitle);
 }
 @media (max-width: 899px) {
