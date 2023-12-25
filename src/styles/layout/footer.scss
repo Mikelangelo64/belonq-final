@@ -69,6 +69,27 @@
         }
       }
     }
+
+    //.footer-contacts__title 
+    &__title {
+      margin: px-to-rem(-6);
+      padding: px-to-rem(6);
+      
+      font-weight: 400;
+      font-size: px-to-rem(16);
+      line-height: 124%;
+      font-family: $font-family-footer;
+
+      color: var(--color-highlight);
+
+      @include viewport-phone { 
+        margin-top: px-to-rem(6);
+
+        @media (max-width: 660px) {
+          font-size: px-to-rem(14);
+        }
+      }
+    }
     
     //.footer-contacts__item 
     &__item {
