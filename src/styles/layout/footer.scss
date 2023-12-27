@@ -58,17 +58,74 @@
       justify-content: center;
     }
 
-    > * + * {
-      margin-left: px-to-rem(12);
-    }
+    > * {
+      + * {
+        position: relative;
+        z-index: 0;
 
-    &.socials {
-      > * + * {
         @include viewport-tablet-min {
-          margin-left: px-to-rem(34);
+          padding-left: px-to-rem(18);
+          margin-left: px-to-rem(18);
+        }
+        
+        @include viewport-phone {
+          padding-left: px-to-rem(8);
+          margin-left: px-to-rem(8);
+        }
+
+        &::before {
+          content: '';
+          display: block;
+          position: absolute;
+          top: 50%;
+          left: 0;
+          z-index: 0;
+
+          width: 1px;
+          
+          background-color: var(--color-highlight);
+          
+          @include viewport-tablet-min {
+            height: 70%;
+            transform: translate(0, -50%);
+          }
+          
+          @include viewport-phone {
+            height: 60%;
+            transform: translate(0, -25%);
+          }
+        }
+      }
+
+      &:first-child + * {
+        padding-left: 0;
+
+        &::before {
+          display: none;
         }
       }
     }
+
+    // &.socials {
+    //   > * {
+    //     + * {
+    //       @include viewport-tablet-min {
+    //         // margin-left: px-to-rem(34);
+
+    //         padding-left: px-to-rem(18);
+    //         margin-left: px-to-rem(18);
+    //       }
+    //     }
+
+    //     &:first-child + * {
+    //       padding-left: 0;
+  
+    //       &::before {
+    //         display: none;
+    //       }
+    //     }
+    //   }
+    // }
 
     //.footer-contacts__title 
     &__title {
