@@ -5,7 +5,7 @@ const changeMail = (trueMail = 'info@belonqclub.com') => {
   const elements = document.querySelectorAll('.footer-contacts__item.email');
   elements.forEach((el) => {
     const element = el;
-    element.innerHTML = `${trueMail}`;
+    element.innerHTML = 'email';
     element.href = `mailto:${trueMail}`;
 
     if (!vevet.isMobile) {

@@ -2171,8 +2171,8 @@ html:not(.v-mobile) .section-main__title.visible .v-split-text__letter:nth-child
   /* stylelint-disable-next-line */
 }
 html:not(.v-mobile) .section-main__title.visible .v-split-text__letter:nth-child(2):hover {
-  transform: translate(0, -0.625rem) rotate(15deg) scale(1.1);
-  color: var(--color-button-hover);
+  transform: translate(0, -0.625rem) rotate(-15deg) scale(1.1);
+  color: var(--color-button-primary);
 }
 
 .section-main__title.visible .v-split-text__letter:nth-child(3) {
@@ -2187,8 +2187,8 @@ html:not(.v-mobile) .section-main__title.visible .v-split-text__letter:nth-child
   /* stylelint-disable-next-line */
 }
 html:not(.v-mobile) .section-main__title.visible .v-split-text__letter:nth-child(4):hover {
-  transform: translate(0, -0.625rem) rotate(-15deg) scale(1.1);
-  color: var(--color-button-primary);
+  transform: translate(0, -0.625rem) rotate(15deg) scale(1.1);
+  color: var(--color-button-hover);
 }
 
 .section-main__title.visible .v-split-text__letter:nth-child(5) {
@@ -2219,8 +2219,8 @@ html:not(.v-mobile) .section-main__title.visible .v-split-text__letter:nth-child
   /* stylelint-disable-next-line */
 }
 html:not(.v-mobile) .section-main__title.visible .v-split-text__letter:nth-child(8):hover {
-  transform: translate(0, -0.625rem) rotate(-15deg) scale(1.1);
-  color: var(--color-button-primary);
+  transform: translate(0, -0.625rem) rotate(15deg) scale(1.1);
+  color: var(--color-button-hover);
 }
 
 .section-main__title.visible .v-split-text__letter:nth-child(9) {
@@ -2235,8 +2235,8 @@ html:not(.v-mobile) .section-main__title.visible .v-split-text__letter:nth-child
   /* stylelint-disable-next-line */
 }
 html:not(.v-mobile) .section-main__title.visible .v-split-text__letter:nth-child(10):hover {
-  transform: translate(0, -0.625rem) rotate(-15deg) scale(1.1);
-  color: var(--color-button-primary);
+  transform: translate(0, -0.625rem) rotate(15deg) scale(1.1);
+  color: var(--color-button-hover);
 }
 
 .section-main__title.visible .v-split-text__letter:nth-child(11) {
@@ -2259,16 +2259,16 @@ html:not(.v-mobile) .section-main__title.visible .v-split-text__letter:nth-child
   /* stylelint-disable-next-line */
 }
 html:not(.v-mobile) .section-main__title.visible .v-split-text__letter:nth-child(13):hover {
-  transform: translate(0, -0.625rem) rotate(15deg) scale(1.1);
-  color: var(--color-button-hover);
+  transform: translate(0, -0.625rem) rotate(-15deg) scale(1.1);
+  color: var(--color-button-primary);
 }
 
 .section-main__title.visible .v-split-text__letter:nth-child(14) {
   /* stylelint-disable-next-line */
 }
 html:not(.v-mobile) .section-main__title.visible .v-split-text__letter:nth-child(14):hover {
-  transform: translate(0, -0.625rem) rotate(-15deg) scale(1.1);
-  color: var(--color-button-primary);
+  transform: translate(0, -0.625rem) rotate(15deg) scale(1.1);
+  color: var(--color-button-hover);
 }
 
 .section-main__title.visible .v-split-text__letter:nth-child(15) {
