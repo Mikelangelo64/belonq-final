@@ -33,7 +33,7 @@ const init = () => {
   // bublesAnimationInit(bubblesHeader, true);
 
   setTimeout(() => {
-    changeMail('info@belonqclub.com');
+    changeMail('info@belonqcommunity.com');
   }, 1000);
 
   const headingTimeline = initHeadingTimeline();
