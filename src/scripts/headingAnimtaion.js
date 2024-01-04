@@ -92,7 +92,7 @@ const initHeadingTimeline = () => {
       spanLetter.classList.add('heading-letter');
       spanLetter.innerHTML = letter.innerHTML;
 
-      console.log(letter);
+      // console.log(letter);
       // splitTextContainer.appendChild(svgContainer);
       // letter.after(svgContainer);
       letter.innerHTML = '';
