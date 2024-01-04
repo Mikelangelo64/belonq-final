@@ -1,7 +1,7 @@
 import vevet from './config/vevet';
 import { footerItemAnimationHandler } from './footerItemsAnimation';
 
-const changeMail = (trueMail = 'info@belonqclub.com') => {
+const changeMail = (trueMail = 'info@belonqcommunity.com') => {
   const elements = document.querySelectorAll('.footer-contacts__item.email');
   elements.forEach((el) => {
     const element = el;
